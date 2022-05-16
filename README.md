@@ -58,3 +58,32 @@ file_format = (
   );
   
 ```
+
+### Packages
+
+To use packages we need to create a `packages.yml` file in the project root directory and paste the configuration settings of the package that you're looking for.
+[Packages hub](https://hub.getdbt.com/)
+
+The file will be like this:
+``` YML
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 0.8.4
+```
+
+If we want to use a private repo as a package we have to do something like this:
+
+``` YML
+packages:
+  - package: name_of_it
+    version: 0.1.1
+  - git: https://github.com/victorbertoldo/dbt_snowflake.git
+    revision: master
+```
+
+Or we can use a sub-directory as a package by doing something like this:
+
+``` YML
+packages:
+  - local: sub-project
+```
