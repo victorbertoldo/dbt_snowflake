@@ -7,4 +7,4 @@ with orders as (
     from {{ source('jaffle_shop', 'orders' ) }}   
 )
 select * from orders
-{{ limit_data_dev('order_date', 500) }}
+{{ limit_data_dev('order_date', 2000) }}
